@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robux Elite | Checkout Diamond</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --deep-space: #080926;
+            --neon-accent: #8ABF3B;
+            --stellar-blue: #1A1A4B;
+            --quantum-silver: #E0E0E0;
+            --platinum: #F5F5F7;
+            --supernova: #8ABF3B;
+        }
+        
+        @font-face {
+            font-family: 'NeonFuture';
+            src: url('https://fonts.cdnfonts.com/css/neon-future') format('woff2');
+            font-weight: 400;
+        }
+        
+        body {
+            font-family: 'NeonFuture', 'Segoe UI', sans-serif;
+            background: radial-gradient(circle at center, var(--stellar-blue), var(--deep-space));
+            color: var(--quantum-silver);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .diamond-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            perspective: 2000px;
+        }
+        
+        .holo-card {
+            background: linear-gradient(145deg, rgba(8,9,38,0.95), rgba(26,26,75,0.97));
+            border-radius: 25px;
+            border: 1px solid rgba(138, 191, 59, 0.3);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5),
+                        0 0 30px rgba(138, 191, 59, 0.3),
+                        inset 0 0 20px rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            transform-style: preserve-3d;
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .holo-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                transparent 45%,
+                rgba(138, 191, 59, 0.1) 50%,
+                transparent 55%
+            );
+            transform: rotate(30deg);
+            animation: holo-glow 8s infinite linear;
+        }
+        
+        @keyframes holo-glow {
+            0% { transform: rotate(30deg) translate(-10%, -10%); }
+            100% { transform: rotate(30deg) translate(10%, 10%); }
+        }
+        
+        .exclusive-banner {
+            background: linear-gradient(90deg, var(--deep-space), var(--neon-accent));
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .exclusive-banner::after {
+            content: '✦✦✦';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            opacity: 0.1;
+            animation: sparkle 2s infinite alternate;
+        }
+        
+        @keyframes sparkle {
+            0% { opacity: 0.1; }
+            100% { opacity: 0.3; }
+        }
+        
+        .product-showcase {
+            display: flex;
+            padding: 3rem;
+            gap: 3rem;
+            align-items: center;
+            position: relative;
+        }
+        
+        .holographic-display {
+            flex: 1;
+            min-width: 350px;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+        
+        .product-hologram {
+            width: 100%;
+            border-radius: 15px;
+            border: 3px solid var(--neon-accent);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+                        0 0 30px rgba(138, 191, 59, 0.3);
+            transition: transform 0.5s;
+            aspect-ratio: 1/1;
+            object-fit: contain;
+            background: rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-hologram::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                135deg,
+                rgba(138, 191, 59, 0.1) 0%,
+                rgba(138, 191, 59, 0) 20%,
+                rgba(138, 191, 59, 0) 80%,
+                rgba(138, 191, 59, 0.1) 100%
+            );
+            pointer-events: none;
+        }
+        
+        .hologram-controls {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+            z-index: 10;
+        }
+        
+        .holo-btn {
+            background: rgba(8,9,38,0.7);
+            border: 1px solid var(--neon-accent);
+            color: var(--neon-accent);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .holo-btn:hover {
+            background: var(--neon-accent);
+            color: var(--deep-space);
+            transform: scale(1.1);
+        }
+        
+        .product-details {
+            flex: 1;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .product-title {
+            font-size: 2.5rem;
+            margin: 0 0 1rem;
+            background: linear-gradient(to right, var(--neon-accent), var(--supernova));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 10px rgba(138, 191, 59, 0.3);
+        }
+        
+        .delivery-tag {
+            display: inline-block;
+            background: var(--neon-accent);
+            color: var(--deep-space);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            box-shadow: 0 0 15px rgba(138, 191, 59, 0.5);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 15px rgba(138, 191, 59, 0.5); }
+            50% { box-shadow: 0 0 25px rgba(138, 191, 59, 0.8); }
+            100% { box-shadow: 0 0 15px rgba(138, 191, 59, 0.5); }
+        }
+        
+        .pricing-section {
+            margin: 2rem 0;
+            position: relative;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: #aaa;
+            font-size: 1.2rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .original-price::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: #8ABF3B;
+            top: 50%;
+            left: 0;
+            transform: rotate(-5deg);
+        }
+        
+        .current-price {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: white;
+            margin: 0.5rem 0;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .current-price::after {
+            content: '✦';
+            position: absolute;
+            right: -1.5rem;
+            top: -0.5rem;
+            color: var(--supernova);
+            font-size: 1.5rem;
+            animation: spin 5s infinite linear;
+        }
+        
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+        
+        .discount-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #8ABF3B, #5a7e24);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            font-weight: bold;
+            margin-left: 1rem;
+            font-size: 1rem;
+            vertical-align: super;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .installments {
+            color: #ddd;
+            margin: 1rem 0;
+            font-size: 1.1rem;
+        }
+        
+        .bonus-card {
+            background: rgba(138, 191, 59, 0.15);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 5px solid var(--neon-accent);
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .bonus-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%238abf3b' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+        
+        .payment-options {
+            margin: 2rem 0;
+        }
+        
+        .payment-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(138, 191, 59, 0.3);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .payment-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(138, 191, 59, 0.1),
+                transparent
+            );
+            transition: 0.5s;
+        }
+        
+        .payment-card:hover {
+            background: rgba(138, 191, 59, 0.05);
+            border-color: var(--neon-accent);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .payment-card:hover::before {
+            left: 100%;
+        }
+        
+        .payment-card.selected {
+            background: rgba(138, 191, 59, 0.1);
+            border-color: var(--neon-accent);
+            box-shadow: 0 0 0 2px var(--neon-accent),
+                        inset 0 0 10px rgba(138, 191, 59, 0.2);
+        }
+        
+        .payment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .payment-title {
+            font-weight: 600;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .payment-icon {
+            color: var(--neon-accent);
+            font-size: 1.5rem;
+        }
+        
+        .payment-price {
+            font-weight: 800;
+            color: var(--neon-accent);
+            font-size: 1.3rem;
+        }
+        
+        .payment-desc {
+            font-size: 0.9rem;
+            color: #ccc;
+            padding-left: 2.3rem;
+        }
+        
+        .checkout-btn {
+            width: 100%;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, var(--neon-accent), #6EA52C);
+            color: var(--deep-space);
+            border: none;
+            border-radius: 12px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-top: 2rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(138, 191, 59, 0.4);
+        }
+        
+        .checkout-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.2),
+                transparent
+            );
+            transition: 0.5s;
+        }
+        
+        .checkout-btn:hover {
+            background: linear-gradient(135deg, #7DBF3F, #5E9A25);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(138, 191, 59, 0.6);
+        }
+        
+        .checkout-btn:hover::before {
+            left: 100%;
+        }
+        
+        .checkout-btn:active {
+            transform: translateY(1px);
+        }
+        
+        .security-section {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 2rem;
+            margin-top: 2rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 0 0 25px 25px;
+            flex-wrap: wrap;
+        }
+        
+        .security-badge {
+            max-width: 120px;
+            opacity: 0.8;
+            transition: all 0.3s;
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+        }
+        
+        .security-badge:hover {
+            opacity: 1;
+            transform: translateY(-3px);
+        }
+        
+        .floating-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+        
+        .particle {
+            position: absolute;
+            background: rgba(138, 191, 59, 0.3);
+            border-radius: 50%;
+            animation: float linear infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+        
+        @media (max-width: 768px) {
+            .product-showcase {
+                flex-direction: column;
+                padding: 2rem;
+            }
+            
+            .holographic-display {
+                width: 100%;
+                margin-bottom: 2rem;
+            }
+            
+            .product-title {
+                font-size: 2rem;
+            }
+            
+            .current-price {
+                font-size: 2.5rem;
+            }
+        }
+        
+        /* Efeito de partículas */
+    </style>
+</head>
+<body>
+    <div class="diamond-container">
+        <div class="holo-card">
+            <div class="exclusive-banner">
+                ✦ OFERTA EXCLUSIVA ✦ +215 VENDIDOS NAS ÚLTIMAS 24H ✦
+            </div>
+            
+            <div class="product-showcase">
+                <div class="floating-particles"></div>
+
+                <div class="holographic-display">
+                    <img src="../assets/3.600 ROBUX banner 01.jpg" alt="Pacote Premium 3.600 Robux" class="product-hologram" id="holoImage">                 
+
+                    <!-- Descrição de imagem avançada -->
+                    <div class="image-description" aria-hidden="true" style="display:none;">
+                        Renderização 3D premium do pacote de 3.600 Robux, mostrando moedas douradas brilhantes 
+                        com detalhes holográficos em um fundo espacial azul profundo. O design inclui:
+                        - Selo de garantia no canto superior direito
+                        - Efeito de brilho dinâmico nas moedas
+                        - Textura metálica premium
+                        - Elementos de design futuristas
+                    </div>
+                </div>
+                
+                <div style="text-align: center;"><a class="product-details">
+                    <h1 class="product-title">3.600 ROBUX</h1>
+                    <div class="delivery-tag">
+                        <i class="fas fa-bolt"></i> ENTREGA AUTOMÁTICA VIA E-MAIL <br> EM  ATÉ 5 MINUTOS
+                    </div>
+                    
+                    <div class="pricing-section">
+                        <div class="original-price">R$ 129,90</div>
+                        <div>
+                            <span class="current-price">R$ 99,90</span>
+                            <span class="discount-badge">23% OFF</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bonus-card">
+                        <strong style="font-size:1.1rem;">✨ BÔNUS EXCLUSIVO ✨</strong><br>
+                        +5% DE ROBUX EXTRA | TOTAL: <strong>3.780 ROBUX</strong>
+                    </div>
+                    
+                    <div class="payment-options">
+                        <div class="payment-card selected" onclick="selectPayment(this, 'pix')">
+                            <div class="payment-header">
+                                <div class="payment-title">
+                                    <i class="fas fa-qrcode payment-icon"></i> PIX
+                                </div>
+                                <div class="payment-price">R$ 99,90</div>
+                            </div>
+                            <div class="payment-desc">5% adicional de desconto • Pagamento instantâneo</div>
+                        </div>
+                        
+                        <div class="payment" onclick="selectPayment(this, 'credit')">
+                        </div>
+                        
+                        <div class="payment" onclick="selectPayment(this, 'boleto')">
+                        </div>
+                    </div>
+                    
+                    <button class="checkout-btn" onclick="initiateCheckout()">
+                        <i class="fas fa-gem"></i> COMPRA SEGURA
+                    </button>
+                </div>
+            </div>
+            
+            <div class="security-section">
+                <img src="../assets/Logo.png" alt="Norton Secured" class="security-badge">
+                <img src="../assets/logo segura.png" alt="Google Safe Browsing" class="security-badge">
+            </div>
+        </div>
+    </div>
+    <script>
+        const holoCard = document.querySelector('.holo-card');
+        
+        holoCard.addEventListener('mousemove', (e) => {
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+            holoCard.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+        
+        holoCard.addEventListener('mouseenter', () => {
+            holoCard.style.transition = 'none';
+        });
+        
+        holoCard.addEventListener('mouseleave', () => {
+            holoCard.style.transition = 'transform 0.5s ease';
+            holoCard.style.transform = 'rotateY(0deg) rotateX(0deg)';
+        });
+        
+    // Seleção de pagamento
+    function selectPayment(element, type) {
+        document.querySelectorAll('.payment-card').forEach(card => {
+            card.classList.remove('selected');
+        });
+        element.classList.add('selected');
+        // Lógica adicional para tipo de pagamento...
+    }
+
+    // Efeito de partículas
+    function createParticles() {
+        const container = document.querySelector('.floating-particles');
+        const particleCount = 20;
+        
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            
+            // Tamanho aleatório entre 2px e 6px
+            const size = Math.random() * 4 + 2;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            
+            // Posição inicial aleatória
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.bottom = `-${size}px`;
+            
+            // Duração e atraso da animação aleatórios
+            const duration = Math.random() * 20 + 10;
+            const delay = Math.random() * 10;
+            particle.style.animationDuration = `${duration}s`;
+            particle.style.animationDelay = `${delay}s`;
+            
+            container.appendChild(particle);
+        }
+    }
+
+    // Efeito 3D no card
+    // (Já definido acima, pode remover duplicação se necessário)
+
+    // Controles holográficos
+    let rotation = 0;
+    
+    function rotateHolo(degrees) {
+        rotation += degrees;
+        document.getElementById('holoImage').style.transform = `rotateY(${rotation}deg)`;
+    }
+    
+    function resetHolo() {
+        rotation = 0;
+        document.getElementById('holoImage').style.transform = 'rotateY(0deg) scale(1)';
+    }
+    
+    // Iniciar checkout
+    function initiateCheckout() {
+        // Animação de clique
+        const btn = document.querySelector('.checkout-btn');
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> PROCESSANDO...';
+        btn.style.background = 'linear-gradient(135deg, #5E9A25, #4D7F1F)';
+        
+        // Simular processamento
+        setTimeout(() => {
+            alert('Compra simulada com sucesso! Redirecionando...');
+            // window.location.href = 'sucesso.html';
+        }, 2000);
+    }
+    
+    // Criar partículas flutuantes
+    createParticles();

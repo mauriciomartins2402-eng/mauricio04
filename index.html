@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RobuxElite - Compre Robux com Descontos Exclusivos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+/* Global Styles */
+:root {
+    --primary-color: #8ABF3B;
+    --primary-dark: #6bb313;
+    --secondary-color: #080926;
+    --accent-color: #A8E34B;
+    --light-color: #F5F9FF;
+    --dark-color: #05071E;
+    --success-color: #4CAF50;
+    --warning-color:  #080926;
+    --info-color: #2196F3;
+    --text-color: #080926;
+    --text-light: #6D6D6D;
+    --white: #FFFFFF;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    --border-radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--light-color);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-size: 2.8rem;
+    color: var(--secondary-color);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+    font-weight: 700;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    border-radius: 2px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: var(--white);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    box-shadow: 0 8px 25px rgba(138, 191, 59, 0.3);
+    position: relative;
+    overflow: hidden;
+    font-size: 0.95rem;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.6s;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(138, 191, 59, 0.4);
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn i {
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: var(--transition);
+    padding: 15px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 70px;
+    transition: var(--transition);
+}
+
+nav ul {
+    display: flex;
+    gap: 35px;
+}
+
+nav ul li a {
+    font-weight: 600;
+    color: var(--secondary-color);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.05rem;
+    position: relative;
+    padding: 5px 0;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: var(--transition);
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a i {
+    font-size: 1.1rem;
+}
+
+/* Mobile Menu */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    z-index: 1001;
+    transition: var(--transition);
+}
+
+/* Hero Banner */
+.hero-banner {
+    margin-top: 90px;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    height: 500px;
+}
+
+.hero-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.hero-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(8, 9, 38, 0.8) 0%, rgba(8, 9, 38, 0.4) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 80px;
+    color: var(--white);
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* Promo Banner */
+.promo-banner {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: var(--white);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.promo-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom right,
+        transparent 0%,
+        transparent 45%,
+        rgba(0, 0, 0, 0.1) 50%,
+        transparent 55%,
+        transparent 100%
+    );
+    transform: rotate(30deg);
+    animation: shine 3s infinite;
+    z-index: -1;
+}
+
+.promo-banner i {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.promo-text {
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.promo-text span {
+    font-weight: 800;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.promo-text span::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--white);
+    border-radius: 2px;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%) rotate(30deg); }
+    100% { transform: translateX(100%) rotate(30deg); }
+}
+
+/* Products Section */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 70px;
+}
+
+.product-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.product-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    z-index: 1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.product-badge::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-color);
+    border-radius: 50px;
+    z-index: -1;
+    opacity: 0.8;
+    animation: pulse 2s infinite;
+}
+
+.product-image {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f5f9ff, #e8f1ff);
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-image::before {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background: var(--primary-color);
+    opacity: 0.1;
+    border-radius: 50%;
+}
+
+.product-image img {
+    max-height: 100%;
+    object-fit: contain;
+    transition: var(--transition);
+    z-index: 1;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.1);
+}
+
+.product-info {
+    padding: 25px;
+    position: relative;
+}
+
+.product-title {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+.product-description {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.product-price {
+    margin-bottom: 25px;
+}
+
+.current-price {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    display: block;
+    line-height: 1;
+}
+
+.original-price {
+    font-size: 1.1rem;
+    text-decoration: line-through;
+    color: var(--text-light);
+    margin-right: 10px;
+}
+
+.discount {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.buy-button {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    box-shadow: 0 5px 15px rgba(138, 191, 59, 0.3);
+}
+
+.buy-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(138, 191, 59, 0.4);
+}
+
+/* Disclaimer */
+.disclaimer {
+    background: var(--white);
+    border-left: 4px solid var(--warning-color);
+    padding: 25px;
+    margin: 60px 0;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.disclaimer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%238ABF3B' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.disclaimer p {
+    font-size: 1rem;
+    color: var(--text-color);
+    position: relative;
+}
+
+.disclaimer strong {
+    color: var(--warning-color);
+}
+
+/* Features Section */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.feature-card {
+    background: var(--white);
+    padding: 40px 30px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    font-size: 2rem;
+    box-shadow: 0 10px 30px rgba(138, 191, 59, 0.3);
+    transition: var(--transition);
+}
+
+.feature-card:hover .feature-icon {
+    transform: rotateY(180deg);
+}
+
+.feature-title {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+.feature-text {
+    color: var(--text-light);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* Testimonials Section */
+.testimonials {
+    background: linear-gradient(135deg, var(--secondary-color), var(--dark-color));
+    padding: 100px 0;
+    color: var(--white);
+    margin: 70px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonials::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%238ABF3B' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.testimonial-container {
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.testimonial-title h2 {
+    color: var(--white);
+    font-size: 2.8rem;
+    margin-bottom: 70px;
+    position: relative;
+    display: inline-block;
+    font-weight: 700;
+}
+
+.testimonial-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    border-radius: 2px;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 120px;
+    color: rgba(255, 255, 255, 0.03);
+    font-family: serif;
+    line-height: 1;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(138, 191, 59, 0.3);
+}
+
+.testimonial-text {
+    font-style: italic;
+    margin-bottom: 30px;
+    position: relative;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    z-index: 1;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.author-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--primary-color);
+    flex-shrink: 0;
+}
+
+.author-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.author-info h4 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.author-info p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Footer */
+footer {
+    background: var(--secondary-color);
+    color: var(--white);
+    padding: 80px 0 0;
+    position: relative;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+.footer-about {
+    padding-right: 30px;
+}
+
+.footer-logo img {
+    height: 60px;
+    margin-bottom: 25px;
+}
+
+.footer-about p {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-bottom: 25px;
+    line-height: 1.8;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    font-size: 1.2rem;
+}
+
+.social-links a:hover {
+    background: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(138, 191, 59, 0.3);
+}
+
+.footer-title {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 15px;
+    font-weight: 700;
+}
+
+.footer-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+.footer-links ul li {
+    margin-bottom: 15px;
+}
+
+.footer-links ul li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    opacity: 0.8;
+    transition: var(--transition);
+    font-size: 1.05rem;
+}
+
+.footer-links ul li a:hover {
+    opacity: 1;
+    color: var(--primary-color);
+    transform: translateX(8px);
+}
+
+.footer-links ul li a i {
+    font-size: 0.9rem;
+    color: var(--primary-color);
+}
+
+.footer-contact p {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+    opacity: 0.8;
+}
+
+.footer-contact p i {
+    width: 25px;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.copyright {
+    text-align: center;
+    padding: 25px 0;
+    background: rgba(0, 0, 0, 0.2);
+    font-size: 1rem;
+    opacity: 0.7;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    
+    .section-title h2 {
+        font-size: 2.5rem;
+    }
+    
+    .testimonial-title h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-banner {
+        height: 400px;
+    }
+    
+    .hero-content {
+        padding: 0 50px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+    
+    .section-title h2 {
+        font-size: 2.2rem;
+    }
+    
+    .testimonial-title h2 {
+        font-size: 2.2rem;
+    }
+    
+    .promo-text {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        padding: 10px 0;
+    }
+    
+    .logo img {
+        height: 45px;
+    }
+    
+    nav ul {
+        gap: 25px;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 85%;
+        max-width: 350px;
+        height: 100vh;
+        background: var(--white);
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+        transition: var(--transition);
+        z-index: 1000;
+        padding: 100px 40px 40px;
+        overflow-y: auto;
+    }
+    
+    nav.active {
+        right: 0;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+    nav ul li a {
+        padding: 10px 0;
+        font-size: 1.2rem;
+        color: var(--secondary-color);
+    }
+    
+    .hero-banner {
+        margin-top: 80px;
+        border-radius: 0;
+        height: 350px;
+    }
+    
+    .hero-content {
+        padding: 0 30px;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-content p {
+        max-width: 100%;
+    }
+    
+    .section-title h2 {
+        font-size: 2rem;
+    }
+    
+    .testimonial-title h2 {
+        font-size: 2rem;
+        margin-bottom: 50px;
+    }
+    
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .footer-about {
+        padding-right: 0;
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .footer-title {
+        text-align: center;
+    }
+    
+    .footer-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .footer-links ul li a {
+        justify-content: center;
+    }
+    
+    .footer-contact p {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-banner {
+        height: 300px;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+    
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+    
+    .testimonial-title h2 {
+        font-size: 1.8rem;
+    }
+    
+    .products {
+        grid-template-columns: 1fr;
+    }
+    
+    .features {
+        grid-template-columns: 1fr;
+    }
+    
+    .promo-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 20px;
+    }
+    
+    .promo-banner i {
+        margin-bottom: 10px;
+    }
+    
+    .testimonial-card {
+        padding: 30px;
+    }
+    
+    .testimonial-text {
+        font-family: 1rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
+.delay-5 { animation-delay: 1s; }
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark);
+}
+/* Checklist Premium */
+.premium-benefits {
+    background: linear-gradient(135deg, #6e48aa 0%, #9d50bb 100%);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 30px 0;
+    color: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+.benefits-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+.benefit-item {
+    display: flex;
+    align-items: center;
+}
+.benefit-item i {
+    margin-right: 10px;
+    color: #080926;
+}
+
+/* Ajuste de estrelas */
+.product-rating {
+    margin: 10px 0;
+    color: #080926;
+}
+ </style>
+<html>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="./assets/Logo.png" alt="RobuxElite Logo">
+            </div>
+            
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#início"><i class="fas fa-home"></i> Início</a></li>
+                    <li><a href="#produtos"><i class="fas fa-shopping-bag"></i> Produtos</a></li>
+                    <li><a href="#como-funciona"><i class="fas fa-question-circle"></i> Como Funciona</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero-banner">
+        <section id="início"></section>
+        <img src="./assets/banner.jpg" alt="RobuxElite Banner">
+        <div class="hero-content fade-in">
+            <h1>Robux Premium com Descontos Exclusivos</h1>
+            <p>Adquira seus Robux com até 30% de desconto e receba bônus exclusivos em todos os pacotes acima de 5.000 Robux!</p>
+            <a href="#produtos" class="btn"><i class="fas fa-arrow-down"></i> Ver Pacotes</a>
+        </div>
+    </section>
+    
+    <div class="container">
+        <div class="promo-banner fade-in delay-1">
+            <i class="fas fa-gem"></i>
+            <div class="promo-text">PROMOÇÃO LIMITADA: Ganhe <span>+10% DE BÔNUS</span> em todos os pacotes acima de 5.000 Robux!</div>
+        </div>
+
+        <section id="produtos">
+            <div class="section-title">
+                <h2>Pacotes Premium</h2>
+            </div>
+            <div class="products">
+                <!-- Card 1 -->
+                <div class="product-card fade-in delay-1">
+                    <div class="product-badge">INICIANTE</div>
+                    <div class="product">
+                        <img src="./assets/700 robux.jpg" alt="400 Robux">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">700 ROBUX</h3>
+                        <p class="product-description">Ideal para quem está começando no Roblox e quer alguns itens legais.</p>
+                        <div class="product-price">
+                            <span class="current-price">R$ 18,90</span><br>
+                            <span class="original-price">R$ 27,90</span>
+                            <span class="discount">50% OFF</span>
+                        </div>
+                        <div class="product-rating" style="display: flex; justify-content: center; align-items: center; gap: 5px;">
+                       <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>(128)</span>
+                            </div>                   
+                        </div>
+                       <!-- ALTERE AQUI: Substitua o botão por um link -->
+                        <div style="text-align: center;"><a href="produtos/700-robux.html" class="btn btn-product">COMPRAR AGORA</a>
+                    </div>
+                </div>
+            </div>
+                
+                <!-- Card 2 -->
+                <div class="product-card fade-in delay-2">
+                    <div class="product-badge">BÁSICO</div>
+                    <div class="product">
+                        <img src="./assets/1.200 ROBUX.jpg" alt="1.200 Robux">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">1.200 ROBUX</h3>
+                        <p class="product-description">Perfeito para quem quer mais opções de customização no Roblox.</p>
+                        <div class="product-price">
+                            <span class="current-price">R$ 29,90</span><br>
+                            <span class="original-price">R$ 39,90</span>
+                            <span class="discount">25% OFF</span>
+                        </div>
+                        <div class="product-rating" style="display: flex; justify-content: center; align-items: center; gap: 5px;">
+                       <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(256)</span>
+                            </div>                   
+                        </div>
+                       <!-- ALTERE AQUI: Substitua o botão por um link -->
+                        <div style="text-align: center;"><a href="produtos/1.200-robux.html" class="btn btn-product">COMPRAR AGORA</a>
+                    </div>
+                </div>
+            </div>
+                
+                <!-- Card 3 -->
+                <div class="product-card fade-in delay-1">
+                    <div class="product-badge">POPULAR</div>
+                    <div class="product">
+                        <img src="./assets/1.700 ROBUX.jpg" alt="1.700 Robux">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">1.700 ROBUX</h3>
+                        <p class="product-description">O pacote mais vendido! Excelente custo-benefício para jogadores ativos.</p>
+                        <div class="product-price">
+                            <span class="current-price">R$ 44,90</span><br>
+                            <span class="original-price">R$ 59,90</span>
+                            <span class="discount">17% OFF</span>
+                        </div>
+                        <div class="product-rating" style="display: flex; justify-content: center; align-items: center; gap: 5px;">
+                       <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(512)</span>
+                            </div>                   
+                        </div>
+                       <!-- ALTERE AQUI: Substitua o botão por um link -->
+                        <div style="text-align: center;"><a href="produtos/1.700-robux.html" class="btn btn-product">COMPRAR AGORA</a>
+                    </div>
+                </div>
+            </div>
+                
+                <!-- Card 4 -->
+                <div class="product-card fade-in delay-2">
+                    <div class="product-badge">INTERMEDIÁRIO</div>
+                    <div class="product">
+                        <img src="./assets/2.100 ROBUX.jpg" alt="2.100 Robux">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">2.100 ROBUX</h3>
+                        <p class="product-description">Para quem quer se destacar com itens raros e exclusivos.</p>
+                        <div class="product-price">
+                            <span class="current-price">R$ 59,90</span><br>
+                            <span class="original-price">R$ 79,90</span>
+                            <span class="discount">25% OFF</span>
+                        </div>
+                        <div class="product-rating" style="display: flex; justify-content: center; align-items: center; gap: 5px;">
+                       <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(384)</span>
+                         </div>                   
+                        </div>
+                       <!-- ALTERE AQUI: Substitua o botão por um link -->
+                        <div style="text-align: center;"><a href="produtos/2.100-robux.html" class="btn btn-product">COMPRAR AGORA</a>
+                    </div>
+                </div>
+            </div>
+                
+                <!-- Card 5 -->
+                <div class="product-card fade-in delay-1">
+                    <div class="product-badge">AVANÇADO</div>
+                    <div class="product">
+                        <img src="./assets/3.600 ROBUX.jpg" alt="3.600 Robux">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">3.600 ROBUX</h3>
+                        <p class="product-description">+5% de bônus! Total de 3.780 Robux com esta oferta especial.</p>
+                        <div class="product-price">
+                            <span class="current-price">R$ 99,90</span><br>
+                            <span class="original-price">R$ 129,90</span>
+                            <span class="discount"> 23% OFF</span>
+                        </div>
+                        <div class="product-rating" style="display: flex; justify-content: center; align-items: center; gap: 5px;">
+                       <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(296)</span>
+                        </div>                   
+                        </div>
+                       <!-- ALTERE AQUI: Substitua o botão por um link -->
+                        <div style="text-align: center;"><a href="produtos/3.600-robux.html" class="btn btn-product">COMPRAR AGORA</a>
+                    </div>
+                </div>
+            </div>
+                
+                <!-- Card 6 -->
+                <div class="product-card fade-in delay-2">
+                    <div class="product-badge">PREMIUM</div>
+                    <div class="product">
+                        <img src="./assets/4.500 ROBUX.jpg" alt="4.500 Robux">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">4.500 ROBUX</h3>
+                        <p class="product-description">+10% de bônus! Total de 4.950 Robux. Melhor oferta do mercado!</p>
+                        <div class="product-price">
+                            <span class="current-price">R$ 129,90</span><br>
+                            <span class="original-price">R$ 159,90</span>
+                            <span class="discount"> 19% OFF</span>
+                        </div>
+                        <div class="product-rating" style="display: flex; justify-content: center; align-items: center; gap: 5px;">
+                       <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(328)</span>
+                         </div>                   
+                        </div>
+                       <!-- ALTERE AQUI: Substitua o botão por um link -->
+                     <div style="text-align: center;"><a href="produtos/4.500-robux.html" class="btn btn-product">COMPRAR AGORA</a>
+                     </div>
+                </div>
+            </div>
+                
+                <!-- Card 7 -->
+                <div class="product-card fade-in delay-1">
+                    <div class="product-badge">VIP</div>
+                    <div class="product">
+                        <img src="./assets/7.000 ROBUX.jpg" alt="7.000 Robux">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">7.000 ROBUX</h3>
+                        <p class="product-description">+10% de bônus! Total de 7.700 Robux. Para verdadeiros fãs do Roblox.</p>
+                        <div class="product-price">
+                            <span class="current-price">R$ 199,90</span><br>
+                            <span class="original-price">R$ 249,90</span>
+                            <span class="discount">20% OFF</span>
+                        </div>
+                        <div class="product-rating" style="display: flex; justify-content: center; align-items: center; gap: 5px;">
+                       <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(412)</span>
+                           </div>                   
+                        </div>
+                       <!-- ALTERE AQUI: Substitua o botão por um link -->
+                       <div style="text-align: center;"><a href="produtos/7.000-robux.html" class="btn btn-product">COMPRAR AGORA</a>
+                 </div>
+                </div>
+            </div>
+
+                <!-- Card 8 -->
+                <div class="product-card fade-in delay-2">
+                    <div class="product-badge">ELITE</div>
+                    <div class="product">
+                        <img src="./assets/banner robux.jpg" alt="10.000 Robux">
+                    </div>
+                    <div class="product-info">
+                        <h5 class="product-title"> 10.000 ROBUX</h5>
+                        <p class="product-description">+10% de bônus! Total de 11.000 Robux. O pacote definitivo para os maiores fãs.</p>
+                        <div class="product-price">
+                            <span class="current-price">R$ 299,90</span><br>
+                            <span class="original-price">R$ 349,90</span>
+                            <span class="discount">14% OFF</span>
+                        </div>
+                        <div class="product-rating" style="display: flex; justify-content: center; align-items: center; gap: 5px;">
+                       <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(147)</span>
+                               </div>                   
+                         </div>
+                       <div style="text-align: center;"><a href="produtos/10.000-robux.html" class="btn btn-product">COMPRAR AGORA</a>
+                    </div>
+                </div>
+            </div>
+                
+                <!-- Card 9 -->
+                <div class="product-card fade-in delay-1">
+                    <div class="product-badge">LENDÁRIO</div>
+                    <div class="product">
+                        <img src="./assets/16.000 ROBUX.jpg" alt="16.000 Robux">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">16.000 ROBUX</h3>
+                        <p class="product-description">+15% de bônus! Total de 18.400 Robux. Oferta exclusiva para clientes premium.</p>
+                        <div class="product-price">
+                            <span class="current-price">R$ 389,90</span><br>
+                            <span class="original-price">R$ 599,90</span>
+                            <span class="discount">35% OFF</span>
+                        </div>
+                        <div class="product-rating" style="display: flex; justify-content: center; align-items: center; gap: 5px;">
+                       <div class="stars">
+                       <i class="fas fa-star"></i>
+                       <i class="fas fa-star"></i>
+                       <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                   </div>
+                       <span>(89)</span>
+                        </div>
+                       <div style="text-align: center;"><a href="produtos/16.000-robux.html" class="btn btn-product">COMPRAR AGORA</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="disclaimer fade-in delay-3">
+            <p><strong>AVISO IMPORTANTE:</strong> Este site não é afiliado, patrocinado ou endossado pela Roblox Corporation. Todos os produtos são digitais e serão entregues através da plataforma oficial da Roblox. O tempo de entrega pode variar de acordo com a disponibilidade do sistema. Em caso de problemas com a ativação, entre em contato com nosso suporte dentro de 72 horas após a compra.</p>
+        </div>
+        
+        <section id="como-funciona">
+            <div class="section-title">
+                <h2>Como Funciona</h2>
+            </div>
+            
+            <div class="features">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3 class="feature-title">1. Escolha Seu Pacote</h3>
+                    <p class="feature-text">Selecione a quantidade de Robux que deseja comprar e clique em "Comprar Agora".</p>
+                </div>
+                
+                <div class="feature-card fade-in delay-1">
+                    <div class="feature-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3 class="feature-title">2. Finalize o Pagamento</h3>
+                    <p class="feature-text">Complete seu pedido com seus dados e escolha a forma de pagamento preferida.</p>
+                </div>
+                
+                <div class="feature-card fade-in delay-2">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <h3 class="feature-title">3. Informe Seu Usuário</h3>
+                    <p class="feature-text">Após a compra, informe seu nome de usuário Roblox para receber os Robux.</p>
+                </div>
+                
+                <div class="feature-card fade-in delay-3">
+                    <div class="feature-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3 class="feature-title">4. Receba Seus Robux</h3>
+                    <p class="feature-text">Seus Robux serão creditados em sua conta em até 24 horas (geralmente mais rápido).</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <section class="testimonials">
+        <div class="testimonial-container">
+            <div class="testimonial-title">
+                <div style="text-align: center;"><h2>O Que Nossos Clientes Dizem</h2></div>
+            </div>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-text">"Comprei 10.000 Robux e recebi em menos de 1 hora! O melhor preço que encontrei na internet e o atendimento foi excelente quando tive dúvidas. A RobuxElite é simplesmente a melhor!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="./assets/fotoperfil01.jpg" alt="Carlos Silva">
+                        </div>
+                        <div class="author-info">
+                            <h4>Carlos Silva</h4>
+                            <p>Cliente desde 2023</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in delay-1">
+                    <p class="testimonial-text">"Sempre comprei Robux pelo site oficial até descobrir a RobuxElite. Economizo quase 30% em cada compra e nunca tive problemas. O processo é rápido e seguro. Recomendo para todos!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="./assets/fotoperfil02.jpg" alt="Ana Oliveira">
+                        </div>
+                        <div class="author-info">
+                            <h4>Ana Oliveira</h4>
+                            <p>Cliente desde 2023</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in delay-2">
+                    <p class="testimonial-text">"Meu filho adora Roblox e agora consigo presentear ele com mais frequência graças aos preços acessíveis da RobuxElite. O suporte 24/7 resolveu minha dúvida em minutos. Ótimo serviço!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="./assets/fotoperfil03.jpg" alt="Marcos Antônio">
+                        </div>
+                        <div class="author-info">
+                            <h4>Marcos Antônio</h4>
+                            <p>Cliente desde 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">
+                    <img src="./assets/Logo.png" alt="RobuxElite">
+                </div>
+                <p>A maior e mais confiável loja de Robux do Brasil, oferecendo os melhores preços e atendimento premium desde 2023. Sua satisfação é nossa prioridade.</p>
+                <div class="social-links">
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h3 class="footer-title">Links Rápidos</h3>
+                <ul>
+                    <li><a href="#início"><i class="fas fa-chevron-right"></i> Início</a></li>
+                    <li><a href="#produtos"><i class="fas fa-chevron-right"></i> Produtos</a></li>
+                    <li><a href="#como-funciona"><i class="fas fa-chevron-right"></i> Como Funciona</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h3 class="footer-title">Contato Premium</h3>
+                <p><i class="fas fa-envelope"></i> suporte@nexusgamer.com</p>
+                <p><i class="fas fa-headset"></i> Suporte 24/7 via chat</p>
+                <p><i class="fas fa-clock"></i> Atendimento: 24 horas</p>
+                <p><i class="fas fa-map-marker-alt"></i> São Paulo, Brasil</p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 RobuxElite. Todos os direitos reservados. Este site não é afiliado à Roblox Corporation.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+<div class="container"></div>
+    
